@@ -1,0 +1,5 @@
+{
+  "invariant" : ["GameStick", "Android"],
+  "disallowed": [],
+  "fuzzy" : "Dalvik/1.6.0 (Linux; U; Android 4.1.2; GameStick V1.0 Build/V1.03.04MX01_20130521)"
+}

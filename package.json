@@ -1,0 +1,31 @@
+{
+  "name": "melanite",
+  "version": "0.0.1",
+  "description": "User-Agent to TAL Device matching",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "standard && mocha --reporter spec",
+    "example": "node example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bbc/melanite.git"
+  },
+  "author": "BBC",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bbc/melanite/issues"
+  },
+  "homepage": "https://github.com/bbc/melanite#README",
+  "dependencies": {
+    "glob": "^7.1.1",
+    "levenshtein-edit-distance": "^1.0.0",
+    "ramda": "0.23.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "standard": "^8.6.0"
+  }
+}
