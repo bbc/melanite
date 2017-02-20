@@ -8,12 +8,14 @@ describe('Device Matching', () => {
   beforeEach(() => {
     testData = {
       'flux-profesh': {
-        invariant: [ 'Mozzarella', 'ultron' ],
-        disallowed: [],
+        invariants: [ 'Mozzarella', 'ultron' ],
         fuzzy: 'Mozzarella reinstall flashy ultron; 81648/ii/AMD t0p_kek123; powered_by_NASA'
       },
+      'no-invariants': {
+        fuzzy: 'No invariants/useragent'
+      },
       'google-chrome': {
-        invariant: [ 'Chrome' ],
+        invariants: [ 'Chrome' ],
         disallowed: [ 'Firefox' ],
         fuzzy: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36'
       }

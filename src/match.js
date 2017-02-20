@@ -12,12 +12,22 @@ const includesAny = (haystack, needles) =>
   any((needle) => haystack.includes(needle), needles)
 
 // hasInvariants :: ua -> matcher -> bool
-const hasAllInvariants = (ua, deviceMatcher) =>
-  includesAll(ua, deviceMatcher.invariant)
+const hasAllInvariants = (ua, deviceMatcher) => {
+  if (deviceMatcher.invariants && deviceMatcher.invariants.length) {
+    return includesAll(ua, deviceMatcher.invariants)
+  } else {
+    return false
+  }
+}
 
 // hasDisallowed :: ua -> matcher -> bool
-const hasDisallowed = (ua, deviceMatcher) =>
-  includesAny(ua, deviceMatcher.disallowed)
+const hasDisallowed = (ua, deviceMatcher) => {
+  if (deviceMatcher.disallowed && deviceMatcher.disallowed.length) {
+    return includesAny(ua, deviceMatcher.disallowed)
+  } else {
+    return false
+  }
+}
 
 // noDisallowed :: ua -> matcher -> bool
 const hasNoDisallowed = compose(not, hasDisallowed)
@@ -37,8 +47,7 @@ const findBestMatch = curry((ua, matches) => {
   const fuzzies = pluck('fuzzy', matches)
   const scores = map((fuzzy) => score(ua, fuzzy), fuzzies)
 
-  const bestScoreIndex = Math.min(values(scores))
-
+  const bestScoreIndex = Math.min(...values(scores))
   const matchesInverted = invertObj(scores)
   const device = matchesInverted[bestScoreIndex] || 'generic-device'
 

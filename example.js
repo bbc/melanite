@@ -1,15 +1,15 @@
-const {loadDevices, match} = require('./')
+const {match} = require('./')
 
-testData = {
+const testData = {
   'gamestick-streamer_2013': {
-    invariant: ["GameStick", "Android"],
+    invariants: ['GameStick', 'Android'],
     disallowed: [],
-    fuzzy : "Dalvik/1.6.0 (Linux; U; Android 4.1.2; GameStick V1.0 Build/V1.03.04MX01_20130521)"
+    fuzzy: 'Dalvik/1.6.0 (Linux; U; Android 4.1.2; GameStick V1.0 Build/V1.03.04MX01_20130521)'
   },
   'google-chrome': {
-    invariant: ["Chrome"],		
-    disallowed: ["ultra cool mode"],
-    fuzzy:  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+    invariants: ['Chrome'],
+    disallowed: ['ultra cool mode'],
+    fuzzy: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36'
   }
 }
 
@@ -26,6 +26,7 @@ const uasToIdentify = [
   almostGamestick,
   whoKnows
 ]
+
 /*
  logs:
    'google-chrome',
@@ -33,20 +34,10 @@ const uasToIdentify = [
    'gamestick-streamer_2013',
    'generic-device',
    'generic-device'
- */
+*/
 
-    const matchMyKnownDevices = match(testData)
-    uasToIdentify
-      .map(matchMyKnownDevices)
-      .map(({brand, model}) => `${brand}-${model}`)
-      .forEach((device) => console.log(device))
-
-
-// Alternatively using loadDevicesSync
-// const {loadDevicesSync, match} = require('melanite')
-// const listOfDevices = loadDevicesSync()
-// const matchMyKnownDevices = match(listOfDevices)
-// uasToIdentify
-//   .map(matchMyKnownDevices)
-// .map(({brand, model}) => `${brand}-${model}`)
-// .forEach((device) => console.log(device))
+const matchMyKnownDevices = match(testData)
+uasToIdentify
+  .map(matchMyKnownDevices)
+  .map(({brand, model}) => `${brand}-${model}`)
+  .forEach((device) => console.log(device))
