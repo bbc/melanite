@@ -49,7 +49,9 @@ const findBestMatch = curry((ua, matches) => {
 
   const bestScoreIndex = Math.min(...values(scores))
   const matchesInverted = invertObj(scores)
-  const device = matchesInverted[bestScoreIndex] || 'generic-device'
+  const device = matchesInverted[bestScoreIndex]
+
+  if (!device) { return null }
 
   const brandModel = device.split('-')
 

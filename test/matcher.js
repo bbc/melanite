@@ -32,6 +32,6 @@ describe('Device Matching', () => {
   })
   it('Returns generic device if the device is not found', () => {
     const modifiedFirefoxUA = 'Mozilla/5.0 (Macintosh; Intel Mac OS Y 10.11; rv:50.0) Gecko/20100101 Firefox/50.0 Chromelike but not/Safari/536.36'
-    expect(matchUserAgents(modifiedFirefoxUA)).to.deep.equal({brand: 'generic', model: 'device'})
+    expect(matchUserAgents(modifiedFirefoxUA)).to.equal(null)
   })
 })
