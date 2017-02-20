@@ -12,22 +12,12 @@ const includesAny = (haystack, needles) =>
   any((needle) => haystack.includes(needle), needles)
 
 // hasInvariants :: ua -> matcher -> bool
-const hasAllInvariants = (ua, deviceMatcher) => {
-  if (deviceMatcher.invariants && deviceMatcher.invariants.length) {
-    return includesAll(ua, deviceMatcher.invariants)
-  } else {
-    return false
-  }
-}
+const hasAllInvariants = (ua, deviceMatcher) =>
+  includesAll(ua, deviceMatcher.invariants)
 
 // hasDisallowed :: ua -> matcher -> bool
-const hasDisallowed = (ua, deviceMatcher) => {
-  if (deviceMatcher.disallowed && deviceMatcher.disallowed.length) {
-    return includesAny(ua, deviceMatcher.disallowed)
-  } else {
-    return false
-  }
-}
+const hasDisallowed = (ua, deviceMatcher) =>
+  includesAny(ua, deviceMatcher.disallowed)
 
 // noDisallowed :: ua -> matcher -> bool
 const hasNoDisallowed = compose(not, hasDisallowed)

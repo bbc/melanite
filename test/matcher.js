@@ -9,10 +9,8 @@ describe('Device Matching', () => {
     testData = {
       'flux-profesh': {
         invariants: [ 'Mozzarella', 'ultron' ],
+        disallowed: [],
         fuzzy: 'Mozzarella reinstall flashy ultron; 81648/ii/AMD t0p_kek123; powered_by_NASA'
-      },
-      'no-invariants': {
-        fuzzy: 'No invariants/useragent'
       },
       'google-chrome': {
         invariants: [ 'Chrome' ],
