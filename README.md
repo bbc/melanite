@@ -7,15 +7,11 @@ For example usage see example.js
 ## API
 ```
 melanite.match :: [matcher] -> userAgent -> device
-melanite.loadDevices :: _ -> Promise [matcher]
-melanite.loadDevicesSync :: _ -> [matcher]
 ```
 
 Matcher:
 ```
-{
-	brand: String, // the brand of the device
-	model: String, // the model name of the device
+'brand-model': {
 	invariant: [String], // substrings that will always be present
 	disallowed: [String], // substrings that can never be present
 	fuzzy: String // an example user agent that will be fuzzily matched, assuming that the invariants and disalloweds are met
@@ -29,4 +25,3 @@ Device:
 	model: String, // the model name of the device
 }
 ```
-
