@@ -18,7 +18,6 @@ describe('Device Matching', () => {
         fuzzy: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36'
       }
     }
-
     matchUserAgents = match(testData)
   })
   it('Finds the correct device', function () {
