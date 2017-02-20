@@ -6,20 +6,19 @@ describe('Device Matching', () => {
   let testData
   let matchUserAgents
   beforeEach(() => {
-    testData = [{
-      brand: 'flux',
-      model: 'profesh',
-      invariant: [ 'Mozzarella', 'ultron' ],
-      disallowed: [],
-      fuzzy: 'Mozzarella reinstall flashy ultron; 81648/ii/AMD t0p_kek123; powered_by_NASA'
-    }, {
-      brand: 'google',
-      model: 'chrome',
-      invariant: [ 'Chrome' ],
-      disallowed: [ 'Firefox' ],
-      fuzzy: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36'
+    testData = {
+      'flux-profesh': {
+        invariant: [ 'Mozzarella', 'ultron' ],
+        disallowed: [],
+        fuzzy: 'Mozzarella reinstall flashy ultron; 81648/ii/AMD t0p_kek123; powered_by_NASA'
+      },
+      'google-chrome': {
+        invariant: [ 'Chrome' ],
+        disallowed: [ 'Firefox' ],
+        fuzzy: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36'
+      }
     }
-    ]
+
     matchUserAgents = match(testData)
   })
   it('Finds the correct device', function () {
