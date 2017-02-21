@@ -9,10 +9,8 @@ describe('Device Matching', () => {
     testData = {
       'flux-profesh': {
         invariants: [ 'Mozzarella', 'ultron' ],
+        disallowed: [],
         fuzzy: 'Mozzarella reinstall flashy ultron; 81648/ii/AMD t0p_kek123; powered_by_NASA'
-      },
-      'no-invariants': {
-        fuzzy: 'No invariants/useragent'
       },
       'google-chrome': {
         invariants: [ 'Chrome' ],
@@ -20,7 +18,6 @@ describe('Device Matching', () => {
         fuzzy: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36'
       }
     }
-
     matchUserAgents = match(testData)
   })
   it('Finds the correct device', function () {
