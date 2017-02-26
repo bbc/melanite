@@ -1,0 +1,87 @@
+{
+  "flux-profesh": {
+    "invariants": [ "Mozzarella", "ultron" ],
+    "disallowed": [],
+    "fuzzy": "Mozzarella reinstall flashy ultron; 81648/ii/AMD t0p_kek123; powered_by_NASA"
+  },
+  "google-chrome": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "REAL CHROME Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome1": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome2": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome3": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome4": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome5": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome6": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome7": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome8": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome9": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome10": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome11": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome12": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome13": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome14": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  },
+  "google-chrome15": {
+    "invariants": [ "Chrome" ],
+    "disallowed": [ "Firefox" ],
+    "fuzzy": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  }
+}

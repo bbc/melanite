@@ -20,15 +20,13 @@ describe('Device Matching', () => {
     }
     matchUserAgents = match(testData)
   })
-  it('Finds the correct device', function () {
+  it('Finds the correct devices', function () {
     const chromeUA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36'
     const madeupDeviceUa = 'Mozzarella file box goodle ultron'
+    const modifiedFirefoxUA = 'Mozilla/5.0 (Macintosh; Intel Mac OS Y 10.11; rv:50.0) Gecko/20100101 Firefox/50.0 Chromelike but not/Safari/536.36'
 
     expect(matchUserAgents(chromeUA)).to.deep.equal({brand: 'google', model: 'chrome'})
     expect(matchUserAgents(madeupDeviceUa)).to.deep.equal({brand: 'flux', model: 'profesh'})
-  })
-  it('Returns generic device if the device is not found', () => {
-    const modifiedFirefoxUA = 'Mozilla/5.0 (Macintosh; Intel Mac OS Y 10.11; rv:50.0) Gecko/20100101 Firefox/50.0 Chromelike but not/Safari/536.36'
     expect(matchUserAgents(modifiedFirefoxUA)).to.equal(null)
   })
 })
