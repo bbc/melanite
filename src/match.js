@@ -1,7 +1,6 @@
 'use strict'
 const score = require('levenshtein-edit-distance')
-const {all, any, not, compose, curry,
-      pluck, filter, map, values, invertObj} = require('ramda')
+const {all, any, not, compose, apply, curry, pluck} = require('ramda')
 
 // includesAll :: String -> [String] -> Boolean
 const includesAll = (haystack, needles) =>
@@ -30,22 +29,18 @@ const isValidFor = curry((ua, deviceMatcher) =>
 
 // matchCandidateDevices :: ua -> [matcher] -> [matcher]
 const matchCandidateDevices = (ua, matchers) =>
-  filter(isValidFor(ua), matchers)
+  matchers.filter(isValidFor(ua))
 
 // findBestMatch :: ua -> [matcher] -> device
 const findBestMatch = curry((ua, matches) => {
+  const best = apply(Math.min)
   const fuzzies = pluck('fuzzy', matches)
-  const scores = map((fuzzy) => score(ua, fuzzy), fuzzies)
+  const scores = fuzzies.map((fuzzy) => score(ua, fuzzy))
+  const bestScoreIndex = scores.indexOf(best(scores))
 
-  const bestScoreIndex = Math.min(...values(scores))
-  const matchesInverted = invertObj(scores)
-  const device = matchesInverted[bestScoreIndex]
+  const device = matches[bestScoreIndex] || {brand: 'generic', model: 'device'}
 
-  if (!device) { return null }
-
-  const brandModel = device.split('-')
-
-  return {brand: brandModel[0], model: brandModel[1]}
+  return {brand: device.brand, model: device.model}
 })
 
 // bestMatch :: [matcher] -> ua -> device
