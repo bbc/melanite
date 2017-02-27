@@ -11,7 +11,8 @@ const includesAny = (haystack, needles) =>
   any((needle) => haystack.includes(needle), needles)
 
 // hasInvariants :: ua -> matcher -> bool
-const hasAllInvariants = (ua, deviceMatcher) => includesAll(ua, deviceMatcher.invariants)
+const hasAllInvariants = (ua, deviceMatcher) =>
+  includesAll(ua, deviceMatcher.invariants)
 
 // hasDisallowed :: ua -> matcher -> bool
 const hasDisallowed = (ua, deviceMatcher) =>
