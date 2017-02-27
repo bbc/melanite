@@ -1,6 +1,6 @@
 {
   "name": "melanite",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "User-Agent to TAL Device matching",
   "main": "index.js",
   "scripts": {
