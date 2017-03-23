@@ -17,6 +17,7 @@ Matcher:
 	invariant: [String], // substrings that will always be present
 	disallowed: [String], // substrings that can never be present
 	fuzzy: String // an example user agent that will be fuzzily matched, assuming that the invariants and disalloweds are met
+	type: String // the type of device, e.g. 'tv'.
 }, {
 	...
 }]
@@ -27,5 +28,6 @@ Device:
 {
 	brand: String, // the brand of the device
 	model: String, // the model name of the device
+	type: String, // the type of device
 }
 ```
