@@ -38,9 +38,9 @@ const findBestMatch = curry((ua, matches) => {
   const scores = fuzzies.map((fuzzy) => score(ua, fuzzy))
   const bestScoreIndex = scores.indexOf(best(scores))
 
-  const device = matches[bestScoreIndex] || {brand: 'generic', model: 'device'}
+  const device = matches[bestScoreIndex] || {brand: 'generic', model: 'device', type: 'unknown'}
 
-  return {brand: device.brand, model: device.model}
+  return {brand: device.brand, model: device.model, type: device.type}
 })
 
 // bestMatch :: [matcher] -> ua -> device
