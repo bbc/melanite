@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "User-Agent to TAL Device matching",
   "main": "index.js",
+  "nashorn": "lib/index.js",
   "scripts": {
     "lint": "standard",
     "build": "babel src -d lib",
