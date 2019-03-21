@@ -1,5 +1,5 @@
 /* globals describe it */
-const {expect} = require('chai')
+const { expect } = require('chai')
 
 describe('example file', () => {
   let oldConsole

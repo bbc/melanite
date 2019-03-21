@@ -19,13 +19,17 @@
   },
   "homepage": "https://github.com/bbc/melanite#README",
   "dependencies": {
-    "glob": "^7.1.1",
-    "levenshtein-edit-distance": "^1.0.0",
-    "ramda": "0.23.0"
+    "levenshtein-edit-distance": "^2.0.3",
+    "ramda": "0.26.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.2.0",
-    "standard": "^8.6.0"
+    "mocha": "^6.0.2",
+    "standard": "^12.0.1"
+  },
+  "standard": {
+    "ignore": [
+      "/lib"
+    ]
   }
 }

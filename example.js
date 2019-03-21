@@ -1,4 +1,4 @@
-const {match} = require('./')
+const { match } = require('./')
 
 const testData = [
   {
@@ -43,5 +43,5 @@ const uasToIdentify = [
 const matchMyKnownDevices = match(testData)
 uasToIdentify
   .map(matchMyKnownDevices)
-  .map(({brand, model}) => `${brand}-${model}`)
+  .map(({ brand, model }) => `${brand}-${model}`)
   .forEach((device) => console.log(device))
