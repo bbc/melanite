@@ -3,8 +3,11 @@
   "version": "1.1.0",
   "description": "User-Agent to TAL Device matching",
   "main": "index.js",
+  "nashorn": "lib/index.js",
   "scripts": {
     "lint": "standard",
+    "build": "babel src -d lib",
+    "prepare": "npm run build",
     "test": "standard && mocha --reporter spec",
     "example": "node example"
   },
@@ -19,13 +22,20 @@
   },
   "homepage": "https://github.com/bbc/melanite#README",
   "dependencies": {
-    "glob": "^7.1.1",
-    "levenshtein-edit-distance": "^1.0.0",
-    "ramda": "0.23.0"
+    "levenshtein-edit-distance": "^2.0.3",
+    "ramda": "0.26.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "chai": "^3.5.0",
-    "mocha": "^3.2.0",
-    "standard": "^8.6.0"
+    "mocha": "^6.0.2",
+    "standard": "^12.0.1"
+  },
+  "standard": {
+    "ignore": [
+      "/lib"
+    ]
   }
 }
