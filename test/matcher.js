@@ -9,15 +9,15 @@ describe('Device Matching', () => {
     testData = [{
       brand: 'flux',
       model: 'profesh',
-      invariants: [ 'Mozzarella', 'ultron' ],
+      invariants: ['Mozzarella', 'ultron'],
       disallowed: [],
       fuzzy: 'Mozzarella reinstall flashy ultron; 81648/ii/AMD t0p_kek123; powered_by_NASA',
       type: 'tv'
     }, {
       brand: 'google',
       model: 'chrome',
-      invariants: [ 'Chrome' ],
-      disallowed: [ 'Firefox' ],
+      invariants: ['Chrome'],
+      disallowed: ['Firefox'],
       fuzzy: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36',
       type: 'unknown'
     }]
