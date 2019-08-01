@@ -4,7 +4,7 @@ const { expect } = require('chai')
 describe('example file', () => {
   let oldConsole
   it('console logs out the expected examples', function () {
-    let loggedOut = []
+    const loggedOut = []
     oldConsole = console.log
     console.log = function () {
       const args = Array.from(arguments)
@@ -17,8 +17,7 @@ describe('example file', () => {
       ['gamestick-streamer_2013'],
       ['generic-device'],
       ['generic-device']
-    ]
-    )
+    ])
     console.log = oldConsole
   })
 })
