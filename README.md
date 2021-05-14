@@ -29,8 +29,8 @@ mandatory).
 
 #### `brand`
 The brand of the device; it serves no purpose for
-identification and is merely a friendly name group several different
-devices (e.g. by manufacturer)
+identification and is merely a friendly name for a group of several
+different devices (e.g. by manufacturer)
 
 #### `model`
 The model of the device; like `brand`, it serves no purpose for
