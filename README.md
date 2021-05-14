@@ -69,8 +69,7 @@ const melanite = require('melanite')
 
 const userAgents = [
   'Mozilla/5.0(Windows NT 10.0; Win64; x64; Xbox; Xbox One) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.713.12 Safari/57.36 Edge/15.4063',
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36',
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefox/88.0'
+  Some very strange user agent that we do not know about'
 ]
 
 const matchers = [
@@ -94,7 +93,6 @@ console.log(devices)
 /*
 [
   { brand: 'microsoft', model: 'xbox-one', type: 'tv' },
-  { brand: 'generic', model: 'device', type: 'unknown' },
   { brand: 'generic', model: 'device', type: 'unknown' }
 ]
 */
