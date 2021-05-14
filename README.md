@@ -69,7 +69,7 @@ const melanite = require('melanite')
 
 const userAgents = [
   'Mozilla/5.0(Windows NT 10.0; Win64; x64; Xbox; Xbox One) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.713.12 Safari/57.36 Edge/15.4063',
-  Some very strange user agent that we do not know about'
+  'Some very strange user agent that we do not know about'
 ]
 
 const matchers = [
