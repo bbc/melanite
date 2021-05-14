@@ -1,33 +1,95 @@
 # melanite
----
-User-Agent to TAL device identification.
+Convert a user-agent to a normalised device.
 
-For example usage see example.js
+# Installation
+`npm install --save melanite`
 
-## API
-```
-melanite.match :: [matcher] -> userAgent -> device
-```
+# Usage
 
-Matcher:
-```
-[{
-	brand: 'brand', // the brand of the device
-	model: 'model', // the model name of the device
-	invariant: [String], // substrings that will always be present
-	disallowed: [String], // substrings that can never be present
-	fuzzy: String // an example user agent that will be fuzzily matched, assuming that the invariants and disalloweds are met
-	type: String // the type of device, e.g. 'tv'.
-}, {
-	...
-}]
-```
-
-Device:
-```
+## Getting started
+In order to use `melanite`, you need to provide one or more
+"matchers"; a matcher represents a device you wish to identify. Below
+is an example matcher that could be used to identify a Microsoft Xbox
+One device:
+```json
 {
-	brand: String, // the brand of the device
-	model: String, // the model name of the device
-	type: String, // the type of device
+  "brand": "microsoft",
+  "model": "xbox-one",
+  "invariants": [
+    "Xbox One"
+  ],
+  "disallowed": [],
+  "fuzzy": "Mozilla/5.0(Windows NT 10.0; Win64; x64; Xbox; Xbox One) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063",
+  "type": "tv"
 }
 ```
+
+Let's take a look at each component of a matcher (all of which are
+mandatory).
+
+#### `brand`
+The brand of the device; it serves no purpose for
+identification and is merely a friendly name group several different
+devices (e.g. by manufacturer)
+
+#### `model`
+The model of the device; like `brand`, it serves no purpose for
+identification and is instead a friendly name for a specific device.
+
+#### `invariants`
+`invariants` is an array of strings (each of these is referred to as
+an invariant); in order for a user agent to be matched to this
+matcher, it **must** contain every invariant (similar to an allowlist).
+
+#### `disallowed`
+`disallowed` is an array of strings, it is in the opposite of
+`invariants`. In order for a user agent to be matched to this matcher,
+it **must not** contain any of these strings (similar to a denylist).
+
+In the above example, we haven't specified any disallowed items. The
+`disallowed` property is most useful when you have two or more
+matchers that are very similar to each other.
+
+#### `type`
+The type of the device; like `brand` and `model`, it serves no purpose
+for identification.
+
+## Identifying devices
+Now that we have a matcher, let's use it to identify some user agents:
+```javascript
+const melanite = require('melanite')
+
+const userAgents = [
+  'Mozilla/5.0(Windows NT 10.0; Win64; x64; Xbox; Xbox One) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.713.12 Safari/57.36 Edge/15.4063',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefox/88.0'
+]
+
+const matchers = [
+  {
+    "brand": "microsoft",
+    "model": "xbox-one",
+    "invariants": [
+	  "Xbox One"
+    ],
+    "disallowed": [],
+    "fuzzy": "Mozilla/5.0(Windows NT 10.0; Win64; x64; Xbox; Xbox One) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063",
+    "type": "tv"
+  }
+]
+
+const identifyDevice = melanite.match(matchers)
+
+const devices = userAgents.map((userAgent) => identifyDevice(userAgent))
+
+console.log(devices)
+/*
+[
+  { brand: 'microsoft', model: 'xbox-one', type: 'tv' },
+  { brand: 'generic', model: 'device', type: 'unknown' },
+  { brand: 'generic', model: 'device', type: 'unknown' }
+]
+*/
+```
+
+For a further example, please see [`example.js`](./example.js).
