@@ -50,6 +50,14 @@ In the above example, we haven't specified any disallowed items. The
 `disallowed` property is most useful when you have two or more
 matchers that are very similar to each other.
 
+##### `fuzzy`
+`fuzzy` can be thought of as an example user agent. When a group of
+matchers have been filtered using `invariants` and `disallowed`,
+`melanite` calculates the
+[Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+between the `fuzzy` and the user-agent - the matcher with the lowest
+Levenshtein distance is the one returned by `melanite`.
+
 #### `type`
 The type of the device; like `brand` and `model`, it serves no purpose
 for identification.
