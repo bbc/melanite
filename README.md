@@ -99,3 +99,7 @@ console.log(devices)
 ```
 
 For a further example, please see [`example.js`](./example.js).
+
+# Snapshot data
+
+We have provided a snasphot of the BBC's devices in production in the ```/data``` directory, if you wish to use these matchers your self.
